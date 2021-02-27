@@ -1,0 +1,53 @@
+body {
+    background-color: lightgoldenrodyellow;
+    background-image: url('/images/nightsky2.jpg');
+    background-size: cover;
+}
+
+h1 {
+    font-family: "Impact", fantasy;
+    color: rgb(5, 86, 236);
+    text-align: center;
+    text-shadow: 2px 2px rgba(255, 255, 255, 0.781);
+}
+
+p {
+    font-family: "American Typewriter", serif;
+    color: white;
+    text-shadow: 2px 2px black;
+    text-align: center;
+}
+
+.horizontal {
+    width: 336px;
+    height: 252px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vertical {
+    width: 252px;
+    height: 336px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#left {
+    text-align: left;  
+ }  
+ 
+ #center {    
+    text-align: center;  
+ }  
+ 
+ #right{    
+    text-align: right;
+ }
+
+ #content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 650px;
+}
