@@ -10,7 +10,7 @@ import com.google.gson.Gson;
 @WebServlet("/fetch-hello-world-string")
 public class RandomStringServlet extends HttpServlet {
 
-    public String[] stringCollection = {
+    private String[] stringCollection = {
         "4 is the cosmic number.",
         "This is a random message",
         "I have no idea of what to write here."
