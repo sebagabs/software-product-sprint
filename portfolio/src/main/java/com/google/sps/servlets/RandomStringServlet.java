@@ -15,8 +15,6 @@ public class RandomStringServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        //response.setContentType("text/html;");
-        //response.getWriter().println("<p>hello world</p>");
         Gson gson = new Gson();
         String json = gson.toJson(stringCollection);
         response.setContentType("application/json;");
