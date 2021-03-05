@@ -30,13 +30,22 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
 /**
  * Displays a string fetched from a servlet.
  */
 async function displayMessage() {
     const responseFromServer = await fetch('/fetch-hello-world-string');
-    const textFromResponse = await responseFromServer.text();
+    
+    // Saves JSON list
+    const jsonList = await responseFromServer.json();
+    console.log(jsonList);
+    
+    // Selects a random string from the JSON list
+    const randomMessage = jsonList[Math.floor(Math.random() * jsonList.length)];
+    console.log(randomMessage);
 
-    const dateContainer = document.getElementById('message-cont');
-    dateContainer.innerText = textFromResponse;
+    // Display it on the main page: index.html
+    const messageContainer = document.getElementById('message-cont');
+    messageContainer.innerText = randomMessage;
 }
