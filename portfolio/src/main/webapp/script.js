@@ -28,7 +28,9 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
-
+/**
+ * Displays a string fetched from a servlet.
+ */
 async function displayMessage() {
     const responseFromServer = await fetch('/fetch-hello-world-string');
     const textFromResponse = await responseFromServer.text();
