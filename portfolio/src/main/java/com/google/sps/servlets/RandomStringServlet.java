@@ -10,8 +10,11 @@ import com.google.gson.Gson;
 @WebServlet("/fetch-hello-world-string")
 public class RandomStringServlet extends HttpServlet {
 
-    public String[] stringCollection = {"4 is the cosmic number.","This is a random message",
-    "I have no idea of what to write here."};
+    public String[] stringCollection = {
+        "4 is the cosmic number.",
+        "This is a random message",
+        "I have no idea of what to write here."
+    };
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
