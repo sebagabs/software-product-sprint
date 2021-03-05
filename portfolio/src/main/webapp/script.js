@@ -41,12 +41,10 @@ async function displayMessage() {
     
     // Saves JSON list
     const jsonList = await responseFromServer.json();
-    console.log(jsonList);
     
     // Selects a random string from the JSON list
     const randomMessage = jsonList[Math.floor(Math.random() * jsonList.length)];
-    console.log(randomMessage);
-
+    
     // Display it on the main page: index.html
     const messageContainer = document.getElementById('message-cont');
     messageContainer.innerText = randomMessage;
