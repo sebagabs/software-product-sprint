@@ -57,6 +57,33 @@
            <li>Taken technical courses such as OOP and Data Structres, both in Java.</li>
            <li>Formed part of the College of Engineering Honor Roll of 2019-2020.</li>
       </ul>
+      <form action="/contact-information" method="POST">
+         <p>Enter your informtion here to get in contact:</p>
+         <label for="fname">First name:</label><br>
+         <input type="text" id="fname" name="fname" value="Juan"><br>
+         <label for="lname">Last name:</label><br>
+         <input type="text" id="lname" name="lname" value="del Pueblo"><br>
+         <label for="email">Email::</label><br>
+         <input type="text" id="email" name="email" value="juandelpueblo@email.com"><br>
+
+         <p>Reason for contacting:</p>
+         <label>
+             <input type="checkbox" id="academic" name="academic-contact" value="true">
+             Academic
+         </label><br>
+         <label>
+             <input type="checkbox" id="professional" name="professional-contact" value="true">
+             Professional
+         </label><br>
+         <label>
+             <input type="checkbox" id="other" name="other-contact" value="true">
+             Other
+             <br><input type="text" id="other-reason" name="other-contact-reason" value=""><br>
+         </label><br>
+        
+         <br/>
+         <input type="submit" />
+      </form>
       <p>Click <a href="/hello">here</a> to see content created by server code.</p>
       <p>Click here to get a random message:</p>
       <button onclick="addRandomGreeting()">Random fact :)</button>
