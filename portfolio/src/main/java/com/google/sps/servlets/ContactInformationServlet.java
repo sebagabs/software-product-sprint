@@ -37,15 +37,15 @@ public class ContactInformationServlet extends HttpServlet {
 
     System.out.println("New contact: " + firstName + " " + lastName + ", " + email);
     if (academicContact) {
-        contactReason = contactReason + "acemdemic; ";
+        contactReason += "acemdemic; ";
         System.out.println("Contact reason: academic");
     }
     if (professionalContact) {
-        contactReason = contactReason + "professional; ";
+        contactReason += "professional; ";
         System.out.println("Contact reason: professional");
     }
     if (otherContact) {
-        contactReason = contactReason + "other;";
+        contactReason += "other;";
         System.out.println("Contact reason: other. " + "Reason: " + otherContactReason);
     }
 
