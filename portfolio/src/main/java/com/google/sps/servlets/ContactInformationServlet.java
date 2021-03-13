@@ -10,8 +10,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-//import org.jsoup.Jsoup;
-//import org.jsoup.safety.Whitelist;
 
 @WebServlet("/contact-information")
 public class ContactInformationServlet extends HttpServlet {
