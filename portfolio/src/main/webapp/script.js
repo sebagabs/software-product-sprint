@@ -49,3 +49,26 @@ async function displayMessage() {
     const messageContainer = document.getElementById('message-cont');
     messageContainer.innerText = randomMessage;
 }
+
+/** Displays contacts to page. */
+function loadContacts() {
+    fetch('/contact-information-display').then(response => response.json()).then((tasks) => {
+        const contactListElement = document.getElementById('contact-list');
+    tasks.forEach((contact) => {
+        contactListElement.appendChild(createContactElement(contact));
+    })
+  });
+}
+
+/** Creates an element that represents a contact, including its delete button. */
+function createContactElement(contact) {
+  const contactElement = document.createElement('li');
+  contactElement.className = 'contact';
+
+  const titleElement = document.createElement('span');
+  titleElement.innerText = contact.title;
+
+  contactElement.appendChild(titleElement);
+  
+  return contactElement;
+}
