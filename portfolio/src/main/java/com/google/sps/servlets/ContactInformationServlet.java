@@ -33,19 +33,10 @@ public class ContactInformationServlet extends HttpServlet {
     String otherContactReason = getParameter(request, "other-contact-reason", "");
     String contactReason = "";
 
-    System.out.println("New contact: " + firstName + " " + lastName + ", " + email);
-    if (academicContact) {
-        contactReason += "acemdemic; ";
-        System.out.println("Contact reason: academic");
-    }
-    if (professionalContact) {
-        contactReason += "professional; ";
-        System.out.println("Contact reason: professional");
-    }
-    if (otherContact) {
-        contactReason += "other;";
-        System.out.println("Contact reason: other. " + "Reason: " + otherContactReason);
-    }
+    System.out.print("Contact reason: ");
+    if (academicContact) System.out.print("academic; ");
+    if (professionalContact) System.out.print("professional; ");
+    if (otherContact) System.out.println("other; " + "Reason: " + otherContactReason);
 
     // Datastore
     long timestamp = System.currentTimeMillis();
