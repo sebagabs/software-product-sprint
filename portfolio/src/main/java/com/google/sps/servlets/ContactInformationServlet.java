@@ -28,9 +28,10 @@ public class ContactInformationServlet extends HttpServlet {
     String otherContactReason = getParameter(request, "other-contact-reason", "");
 
     System.out.println("New contact: " + firstName + " " + lastName + ", " + email);
-    if (academicContact) System.out.println("Contact reason: academic");
-    if (professionalContact) System.out.println("Contact reason: professional");
-    if (otherContact) System.out.println("Contact reason: other. " + "Reason: " + otherContactReason);
+    System.out.print("Contact reason: ");
+    if (academicContact) System.out.print("academic; ");
+    if (professionalContact) System.out.print("professional; ");
+    if (otherContact) System.out.println("other; " + "Reason: " + otherContactReason);
     response.sendRedirect("https://smaldonado-sps-spring21.appspot.com");
     }
 
