@@ -29,6 +29,12 @@
           be able to find a virutal portfolio containing different details about me. This webpage was developed as part of participating in 
           Google's Software Product Sprint Spring 2021.
       </p>
+      <form action="/form-handler" method="POST">
+         <p>Enter some text here:</p>
+         <textarea name="text-input">hello world</textarea>
+         <br/>
+         <input type="submit" />
+      </form>
       <a href="https://www.discoverpuertorico.com/"> <img src="images/pr-flag.png" alt="Puerto Rico flag icon." class="center"/></a>
       <p> I was born in May of '01 in the town of Arecibo, but lived most of my life in Hatillo. For two years I lived in Corozal, and for almost 4 years now I have lived
           in the northern town of Manatí. I enjoy eating; I love trying new foods and getting to know cultures through their gastronmic delights. That being said, I truly
@@ -51,6 +57,34 @@
            <li>Taken technical courses such as OOP and Data Structres, both in Java.</li>
            <li>Formed part of the College of Engineering Honor Roll of 2019-2020.</li>
       </ul>
+      <form action="/contact-information" method="POST">
+         <p>Enter your informtion here to get in contact:</p>
+         <label class="labels" for="fname">First name:</label><br>
+         <input type="text" id="fname" name="fname" placeholder="Juan"><br>
+         <label class="labels" for="lname">Last name:</label><br>
+         <input type="text" id="lname" name="lname" placeholder="del Pueblo"><br>
+         <label class="labels" for="email">Email:</label><br>
+         <input type="text" id="email" name="email" placeholder="username@email.com"><br>
+
+         <p>Reason for contacting:</p>
+         <label class="labels">
+             <input type="checkbox" id="academic" name="academic-contact" value="true">
+             Academic
+         </label><br>
+         <label class="labels">
+             <input type="checkbox" id="professional" name="professional-contact" value="true">
+             Professional
+         </label><br>
+         <label class="labels">
+             <input type="checkbox" id="other" name="other-contact" value="true">
+             Other
+             <br><input type="text" id="other-reason" name="other-contact-reason" placeholder="other reason"><br>
+         </label><br>
+        
+         <br/>
+         <input type="submit" />
+         <br><br>
+      </form>
       <p>Click <a href="/hello">here</a> to see content created by server code.</p>
       <p>Click here to get a random message:</p>
       <button onclick="addRandomGreeting()">Random fact :)</button>
