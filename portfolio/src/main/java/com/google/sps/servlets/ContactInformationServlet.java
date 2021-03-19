@@ -1,5 +1,10 @@
 package com.google.sps.servlets;
 
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.FullEntity;
+import com.google.cloud.datastore.KeyFactory;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,12 +31,31 @@ public class ContactInformationServlet extends HttpServlet {
     boolean professionalContact = Boolean.parseBoolean(getParameter(request, "professional-contact", "false"));
     boolean otherContact = Boolean.parseBoolean(getParameter(request, "other-contact", "false"));
     String otherContactReason = getParameter(request, "other-contact-reason", "");
+    String contactReason = "";
 
     System.out.println("New contact: " + firstName + " " + lastName + ", " + email);
     System.out.print("Contact reason: ");
     if (academicContact) System.out.print("academic; ");
     if (professionalContact) System.out.print("professional; ");
     if (otherContact) System.out.println("other; " + "Reason: " + otherContactReason);
+
+
+    // Datastore
+    long timestamp = System.currentTimeMillis();
+    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Contact");
+    FullEntity contactEntity =
+        Entity.newBuilder(keyFactory.newKey())
+            .set("fname", firstName)
+            .set("lname", lastName)
+            .set("email", email)
+            .set("reason", contactReason)
+            .set("other reason", otherContactReason)
+            .set("timestamp", timestamp)
+            .build();
+    datastore.put(contactEntity);
+
+
     response.sendRedirect("https://smaldonado-sps-spring21.appspot.com");
     }
 
