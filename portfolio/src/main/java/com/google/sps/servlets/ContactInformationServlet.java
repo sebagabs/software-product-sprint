@@ -39,6 +39,7 @@ public class ContactInformationServlet extends HttpServlet {
     if (professionalContact) System.out.print("professional; ");
     if (otherContact) System.out.println("other; " + "Reason: " + otherContactReason);
 
+
     // Datastore
     long timestamp = System.currentTimeMillis();
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
@@ -53,6 +54,7 @@ public class ContactInformationServlet extends HttpServlet {
             .set("timestamp", timestamp)
             .build();
     datastore.put(contactEntity);
+
 
     response.sendRedirect("https://smaldonado-sps-spring21.appspot.com");
     }
